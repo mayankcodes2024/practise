@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: poppins;
+    src: url('../font/Poppins-Regular.ttf');
+}
+:root{
+    --bg-color :linear-gradient(to left ,lightseagreen, lightblue);
+    --font-color : white;
+    --regular : 500;
+    --medium : 600;
+    --bold : 700;
+}
+a,button{
+    text-decoration: none;
+    color: var(--font-color);
+    cursor: pointer;
+}
+h1,h2,h3,h4,h5,h6,a,input,select,option{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    /* height: 100vh; */
+    font-family: poppins;
+    background : var(--bg-color);
+    max-width: 100%;
+}
+.hr-line{
+    border: 3px solid #abcdef;
+}
+h1{
+    text-align: center;
+    text-shadow: 1px 3px 5px #ffb123;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 3rem; */
+}
+form .form-group{
+    background-color: var(--font-color);
+    box-shadow: 2px 4px 5px crimson;
+    max-width: 85%;
+    border-radius: .5rem;
+}
+form .form-group .form-input{
+    display: flex;
+    justify-content :space-between;
+    align-items: center;
+}
+form .form-group .form-input .input-inner, label{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: var(--bold);
+    margin: .5rem 1rem .3rem;
+}
+form .form-group .form-input .input-inner{
+    position: relative;
+    width: 85%;
+}
+form .form-group .form-input .input-inner input{
+    padding: 0.8rem 0.8rem 0.5rem 0.5rem;
+    /* border: none; */
+    /* outline: none; */
+    transition: 0.5s;
+    box-shadow: .2rem .3rem .3rem orchid;
+    margin: .5rem 0.8rem .3rem 0;
+    border-radius: .5rem;
+    width: 100%;
+}
+
+
+form .form-input .input-inner input:focus{
+    box-shadow: 2px 2px 5px royalblue;
+}
+form .form-group .form-input .input-inner .icons{
+    /* position: relative; */
+    position: absolute;
+    top: 3.8rem;
+    right: .5rem;
+    /* display: none; */
+}
+form .form-group .form-input .input-inner.error input{
+    border: 5px solid red;
+}
+form .form-group .form-input .input-inner.error #cross{
+    display: block;
+}
+/* .input-inner.error span{
+    color: red;
+} */
+form .form-group .form-input .input-inner.success input{
+    border: 5px solid green;
+}
+form .form-group .form-input .input-inner.success #check{
+    display: block;
+}
+span{
+    font-size: 10px;
+    color: red;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+#cross{
+    color: red;
+    display: none;
+}
+#check{
+    color: green;
+    display: none;
+}
+svg{
+    height: 13px;
+    width: 13px;
+}
+form .form-input .input-gender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1.5rem;
+    
+}
+form .form-input .input-gender label {
+    margin: 0 0.3rem;
+}
+form .form-input .input-gender input{
+    margin: 0 .9rem;
+    font-size: 25px;
+    /* accent-color: orchid; */
+}
+input[type="radio"]{
+    display: block;
+    accent-color: purple;
+    transform: scale(2);
+} 
+form .input-city{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.3rem;
+}
+select{
+    margin: 0 0;
+    padding: .2rem 0;
+}
+.button-action {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-action button{
+    padding: 0.6rem 1.5rem;
+    background-color: cadetblue;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    transition: 0.5s;
+    margin: 1rem auto;
+    transition: all .5s ease-in-out 0s;
+    font-weight: var(--bold);
+}
+.button-action button:hover{
+    background-color: orangered;
+}
+
+/* table css start  */
+table{
+    margin: 2rem auto;
+    border: 2px solid #abcdef;
+    transition: .6s;
+}
+table tr th{
+    border-right: 2px solid #abbccc;
+    padding: .5rem 2.5rem;
+    color: #aaffff;
+    text-shadow: 5px 10px 12px blueviolet;
+}
+
+#register{
+    margin-top: 80px;
+}
