@@ -46,7 +46,7 @@ form{
 form .form-group{
     background-color: var(--font-color);
     box-shadow: 2px 4px 5px crimson;
-    max-width: 85%;
+    max-width: 100%;
     border-radius: .5rem;
 }
 form .form-group .form-input{
@@ -62,12 +62,12 @@ form .form-group .form-input .input-inner, label{
 }
 form .form-group .form-input .input-inner{
     position: relative;
-    width: 85%;
+    width: 100%;
 }
 form .form-group .form-input .input-inner input{
     padding: 0.8rem 0.8rem 0.5rem 0.5rem;
-    /* border: none; */
-    /* outline: none; */
+    border: none;
+    outline: none;
     transition: 0.5s;
     box-shadow: .2rem .3rem .3rem orchid;
     margin: .5rem 0.8rem .3rem 0;
@@ -102,10 +102,11 @@ form .form-group .form-input .input-inner.success #check{
     display: block;
 }
 span{
-    font-size: 10px;
+    font-size: .7rem;
     color: red;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
+    font-weight: var(--bold);
 }
 #cross{
     color: red;
@@ -173,16 +174,42 @@ select{
 /* table css start  */
 table{
     margin: 2rem auto;
-    border: 2px solid #abcdef;
+    /* border: 2px solid #abcdef; */
     transition: .6s;
 }
 table tr th{
     border-right: 2px solid #abbccc;
+    border-bottom: 2px solid #abbccc;
     padding: .5rem 2.5rem;
     color: #aaffff;
     text-shadow: 5px 10px 12px blueviolet;
 }
-
-#register{
+table tr th:nth-child(3){
+    padding: 0 5rem;
+}
+#table_body tr {
+    text-align: center;
+}
+table #table_body tr td{
+    margin: auto;
+    border-right: 2px solid #abbccc; 
+    border-bottom: 2px solid #abbccc;
+}
+/* #register{
     margin-top: 80px;
+} */
+.btn-action{
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000;
+    padding-left: .5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.btn-action .fa-pen-to-square{
+    color: green;
+}
+.btn-action .fa-trash{
+    color: red;
 }
