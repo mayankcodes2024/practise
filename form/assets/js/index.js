@@ -1,7 +1,5 @@
 const submitAction = document.getElementById("submit");
 const form = document.getElementById("form");
-let array = [];
-let id = 0;
 let one;
 
 submitAction.addEventListener("click", (e) => {
@@ -12,7 +10,6 @@ submitAction.addEventListener("click", (e) => {
     updateRecords(addData);
   }
   one = null;
-  // editData();
 });
 
 function addData() {
@@ -23,11 +20,8 @@ function addData() {
   if (!isFormComplete) {
     return;
   }
-  // editData();
 
   let n = 0;
-  // let x = 0;
-
   let newRow = document.getElementById("table_body");
   let inserRown = newRow.insertRow(n);
 
@@ -35,10 +29,6 @@ function addData() {
   const contact = document.getElementById("contact");
   const email = document.getElementById("email");
   const password = document.getElementById("password");
-  // const genders = document.querySelector('input[name="gender"]:checked').value;
-
-  // const g1 = document.getElementById("male");
-  // const g2 = document.getElementById("female");
 
   const cel1 = inserRown.insertCell(0);
   const cel2 = inserRown.insertCell(1);
@@ -69,12 +59,7 @@ function addData() {
   );
 
   n++;
-  name.value = "";
-  contact.value = "";
-  email.value = "";
-  password.value = "";
-  gender.checked = false;
-  city.value = "";
+  resetAllData();
 }
 
 function validateForm(gender, citiiie) {
@@ -82,11 +67,8 @@ function validateForm(gender, citiiie) {
   const contact = document.getElementById("contact");
   const email = document.getElementById("email");
   const password = document.getElementById("password");
-  // addData();
-  // updateData();
 
   if (!name.value) {
-    // console.log(!name.value);
     name.style.border = "5px solid red";
     document.getElementById("msg").textContent = "please Enter Name";
   } else {
@@ -100,7 +82,6 @@ function validateForm(gender, citiiie) {
   } else if (contact.value.length > 10 || contact.value.length < 10) {
     document.getElementById("msg1").textContent =
       "please enter only 10 Digit number only";
-    // return false;
   } else {
     contact.style.border = "none";
     document.getElementById("msg1").textContent = "";
@@ -119,7 +100,6 @@ function validateForm(gender, citiiie) {
   } else if (password.value.length < 8 || password.value.length > 15) {
     document.getElementById("msg3").textContent =
       "please Enter password length between 8 to 15";
-    // return false;
   } else {
     password.style.border = "none";
     document.getElementById("msg3").textContent = "";
@@ -152,7 +132,7 @@ function validateForm(gender, citiiie) {
 function extraValidate() {
   const gender = document.querySelectorAll('input[name="gender"]');
   for (let i = 0; i < gender.length; i++) {
-    if (gender[i].checked) {
+    if ((gender[i].checked = true)) {
       return gender[i].value;
     }
   }
@@ -166,7 +146,7 @@ function getCity() {
       return city[i].value;
     }
   }
-  return "";
+  return;
 }
 
 function deleteData() {
@@ -174,12 +154,18 @@ function deleteData() {
     const text = document.querySelector("#table_body tr");
     text.remove();
   }
-  localStorage.setItem("userData", JSON.stringify("addData"));
 }
-
+function resetAllData() {
+  let gender = extraValidate();
+  document.getElementById("name").value = "";
+  document.getElementById("contact").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("password").value = "";
+  gender.checked = false;
+  city.value = "";
+}
 function editData(td) {
   one = td.parentElement.parentElement;
-  // one = name;
   document.getElementById("name").value = one.cells[0].innerHTML;
   document.getElementById("contact").value = one.cells[1].innerHTML;
   document.getElementById("email").value = one.cells[2].innerHTML;
@@ -191,13 +177,9 @@ function editData(td) {
 }
 
 function updateRecords() {
-  let newRow = document.getElementById("table_body"),
-    rIndex;
+  let newRow = document.getElementById("table_body");
+  const name = document.getElementById("name");
   console.log(one);
-  const gender = extraValidate();
-  const city = getCity();
-
-  // console.log(selectData);
   one.cells[0].innerHTML = document.getElementById("name").value;
   one.cells[1].innerHTML = document.getElementById("contact").value;
   one.cells[2].innerHTML = document.getElementById("email").value;
@@ -206,5 +188,5 @@ function updateRecords() {
     'input[name="gender"]:checked'
   ).value;
   one.cells[5].innerHTML = document.getElementById("city").value;
+  resetAllData();
 }
-// updateRecords();
